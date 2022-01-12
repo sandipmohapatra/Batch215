@@ -36,6 +36,7 @@ This is used for drop down menu.
 22)<hr> ---horizontal line .
 23)<hr color=red> --- We can give the horizontal line color.
 24)<!DOCTYPE html> ---It is used for HTML5 so that the browser will come to now that we are using HTML5 tags.
+25)<br> ---To goto the next line.
 ---------------------------------------------------------------------------------------------------------
 Example-1
 ------------------------
@@ -89,6 +90,21 @@ Example-2
 </body>
 </html>
 -------------------------------------------------------------------------------
-
+Example-3
+--------------------
+25)<frameset rows="25%,*">:- It will divide the page into rows.
+"25%,*" :- the page will be divided horizontally into 25% and 75% .
+<frame src=first.html name=f1>
+<frame src=second.html name=f2>
+---------------------------------------------------------------------------------------------------------------
+26)<frameset cols="20%,*"> :- It will divide the page into columns.
+"20%,*" :- The page will be divided vertically into 20% and 80% 
+<frame src=third.html name=f3>
+<frame src=forth.html name=f4>
+---------------------------------------------------------------------------------------------------
+<a href="register.html" target=f4>Registration</a><br><br>
+anchor tag :- <a href=<filename>>To Display name</a>
+if we click on the displayed name it will display the file.
+----------------------------------------------------------------------------------------------
 
 
