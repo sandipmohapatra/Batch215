@@ -1,9 +1,12 @@
 https://github.com/sandipmohapatra/Batch215
 ---------------------------------------------------------------------
 HTML :- 
-The use of HTML is to design webpages.
-It is also called as view.We have to save the file by the extention .html.
-We have lot of html tags.which we have to open and close after the task is completed.
+1)The use of HTML is to design webpages.
+2)It is also called as view.We have to save the file by the extention .html.
+3)We have lot of html tags.which we have to open and close after the task is completed.
+4)Html is user friendly .it is not case-sensetive.If we don't close the tags also it will not display any error message.
+5)html are static to make it dynamic we have use <form action=second>.so the data will redirect to a middleware. 
+------------------------------------------HTML TAGS---------------------------------------------------- 
 1)<html></html> ---This is the starting and ending tag for html page.
 2)<title></title> ----This will display the title of the page in the title bar.
 3)<body></body>----This is to write the body of the html page.
@@ -30,8 +33,39 @@ This is used for drop down menu.
 19)<tr> --- this is used to create table row.
 20)<td> ---This is used to create table division.
 21)<th> --- This is used to create table head .It will be in bold letters.
- 
-
+22)<hr> ---horizontal line .
+23)<hr color=red> --- We can give the horizontal line color.
+---------------------------------------------------------------------------------------------------------
+Example-1
+------------------------
+<html>
+<title>This is may first page</title>
+<body bgcolor=cyan>
+<form action=second>
+<h1><center>Employee Registration Page</center></h1><hr color=red><hr color=blue>
+<table>
+<tr><td>Enter the EmpID<td><input type=text name=empid size=20 required></tr>
+<tr><td>Enter the Name<td><input type=text name=name size=20 required></tr>
+<tr><td>Enter the Email<td><input type=email name=email size=20 required></tr>
+<tr><td>Enter the Phone no<td><input type=number name=phoneno size=20 required></tr>
+<tr><td>Enter the DOB<td><input type=date name=dob size=20 required></tr>
+<tr><td>Enter the Current Time<td><input type=time name=currtime size=20 required></tr>
+<tr><td>Enter to gender<td><input type=radio name=gen>Male<input type=radio name=gen>Female</tr>
+<tr><td>Enter the Hobby<td><input type=checkbox name=hobby1>Cricket<input type=checkbox name=hobby2>Football<input type=checkbox name=hobby3>Chess<input type=checkbox name=hobby4>Cycling</tr>
+<tr><td>Enter the Nationality<td><select name=natyion>
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+<option>China</option>
+</tr>
+<tr><td><td><input type=submit value=submit></tr>
+</table>
+</form>
+</body>
+</html>
+------------------------------------------------------------------------------------------
+Example-2
+----------------------
 
 
 
