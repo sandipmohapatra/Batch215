@@ -35,6 +35,7 @@ This is used for drop down menu.
 21)<th> --- This is used to create table head .It will be in bold letters.
 22)<hr> ---horizontal line .
 23)<hr color=red> --- We can give the horizontal line color.
+24)<!DOCTYPE html> ---It is used for HTML5 so that the browser will come to now that we are using HTML5 tags.
 ---------------------------------------------------------------------------------------------------------
 Example-1
 ------------------------
@@ -64,9 +65,30 @@ Example-1
 </body>
 </html>
 ------------------------------------------------------------------------------------------
-Example-2
+github 
 ----------------------
-
+It is a version control tool.
+We can upload our project files.Every one in yor team can see it.You can only upload in your github account .Other can see or download it. They cannot upload into your account.
+use of github :- your files will be safe.
+how to create a github link :- github.com
+varify for mail
+----------------------------------------------------------------------
+Example-2
+-------------------
+<!DOCTYPE html>
+<html>
+<title>This is may Second page</title>
+<!-- <body bgcolor=yellow> -->
+<body background="abc.jpg"> 
+<center><img src="dj.jpg" alt="no image" width=200 height=200></img></center>
+<table border=1>
+<tr><td><audio src="abc.mp3" controls="autoplay"></audio></td></tr>
+<tr><td><audio src="def.mp3" controls="autoplay"></audio></td></tr>
+<tr><td><video src="xyz.mp4" controls="autoplay" width=300 height=300></video></td></tr>
+</table>
+</body>
+</html>
+-------------------------------------------------------------------------------
 
 
 
