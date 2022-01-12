@@ -1,3 +1,38 @@
+https://github.com/sandipmohapatra/Batch215
+---------------------------------------------------------------------
 HTML :- 
 The use of HTML is to design webpages.
-It is also called as view.We have to 
+It is also called as view.We have to save the file by the extention .html.
+We have lot of html tags.which we have to open and close after the task is completed.
+1)<html></html> ---This is the starting and ending tag for html page.
+2)<title></title> ----This will display the title of the page in the title bar.
+3)<body></body>----This is to write the body of the html page.
+4) <h1> to <h6>---  it is heading tag.The letters will be in bold.
+5)<center></center> ----To align the text to the center.
+6)<left></left> ---to align the text to the left.
+7)<right></right> --- to align the text to the right.
+8)<form></form> ---to send the data from the html page to a middleware.(java/.net)
+9)<input type=text>---to create a text box to enter text.
+10)<input type=number>---to create a text box to enter number.
+11)<input type=password>---to create a text box to enter password.
+12)<input type=email>---to create a text box to enter email.
+13)<input type=date>---to create a text box to enter date.
+14)<input type=time>---to create a text box to enter time.
+15)<select>
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+</select>
+This is used for drop down menu.
+16)<input type=radio>---to create a radio buttons.
+17)<input type=checkBox>---to create a check box.
+18)<table></table> --- This is used for creating table with border
+19)<tr> --- this is used to create table row.
+20)<td> ---This is used to create table division.
+21)<th> --- This is used to create table head .It will be in bold letters.
+ 
+
+
+
+
+
