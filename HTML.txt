@@ -166,11 +166,12 @@ select your country
 create a project on covid-19 wave-3 
 put backgrounds images /background plain then use <img src=""> 
 1)registration /login
-2)Book a bed
-3)Book a doctor by checking the list of doctors from a table.
-4)Book an ambulance
-5)Your Contact details
-6)FeedBack
+2)list of doctors from a table
+3)Book a doctor by checking the list.
+4)Book a bed
+5)Book an ambulance
+6)Your Contact details
+7)FeedBack
 ----------------------------------------------------------------------
 * Use frameset
 ---------------------------------------------------------
