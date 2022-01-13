@@ -1,0 +1,77 @@
+CSS stands for cascading style sheets.
+It is used for design purpose.
+The external style sheet saves a lot of work.
+The external style sheet is stored in .css files.
+------------------------------------------------------------------------------
+We have 3 ways of inserting a style sheet.
+1)External style sheet
+2)Internal style sheet
+3)Inline style sheet
+-----------------------------------------------------------------------------
+The html page should look good.
+---------------------------------------------------------
+you have created 50pages the client want changes in every page.
+we use external css which will save lot of work.
+-----------------------------------------------------------------------
+Internal style sheet :- it is written inside the html page.It is used with the html tag.We can also create our own tag.
+---------------------------------
+Example-1
+----------------------
+<html>
+<head>
+<title>This is my first page</title>
+<style>
+h1
+{
+background-color:cyan;
+color:red;
+}
+h2
+{
+background-color:yellow;
+color:red;
+}
+body
+{
+background-color:pink;
+}
+x1
+{
+background-color:green;
+}
+p
+{
+font-family:"Times New Roman";
+font-size:50px;
+color:red;
+}
+</style>
+</head>
+<body>
+<h1><center>This a Internal CSS Example</center></h1>
+<h2><center>Welcome All To Internal CSS Example</center></h2>
+<x1>This is our own Tag</x1>
+<p>This is a paragraph Tag</p>
+<p>This is a paragraph Tag</p>
+<p>This is a paragraph Tag</p>
+</body>
+</html>
+------------------------------------------------
+h1
+{
+background-color:cyan;
+color:red;
+}
+
+
+selector {declaration}
+
+selector {property:value;}
+----------------------------------------------------------------------
+In this case h1 is the selector
+background-color is the property .
+cyan is the value.
+---------------------------------------------------------------------------
+color:red in this color indicates the font color.
+-----------------------------------------------------------------------------
+
