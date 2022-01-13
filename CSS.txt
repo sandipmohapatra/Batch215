@@ -306,7 +306,7 @@ List :-
 We have 
 1)order list (numeric list) 
 2)unorder list (bulleted list)
-3)Desription list 
+3)Description list 
 -------------------------------------------------------------------
 example-10
 ---------------------
@@ -340,3 +340,54 @@ example-10
 <dt> ---The term of the list
 <dd> --- The term defination.
 -------------------------------------------------------
+inline css
+---------------------------------
+The style will be within the line.
+example:-
+<p style="color:blue">This is an example of Inline css</p>
+-----------------------------------------------------------------------------------------
+<html>
+<body>
+<p style="color:blue;text-align:center;">This is an example of Inline css</p>
+<p style="color:green">This is an example of Inline css</p>
+<p style="color:red">This is an example of Inline css</p>
+</body>
+</html>
+-------------------------------------------------------------------------------------------------------------
+External css
+-----------------------
+The css will be written out side the html .We have to save the css file with .css extention.
+To access the external css we have to call the .css file within the html file.
+--------------------------------------------------
+<link rel="stylesheet" type="text/css" href="abc.css"/>
+---------------------------------------------------------------------------------------------------------
+  abc.css
+------------------
+p{color:white;}
+h1,h3{color:yellow;}
+h2{color:red;}
+body
+{
+background-image: url("abc.jpg");
+background-repeat: no-repeat;
+}
+---------------------------------------------
+first.html
+---------------
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="abc.css"/>
+</head>
+<body>
+<p>This is external CSS</p>
+<h1>This is external CSS</h1>
+<h2>This is external CSS</h2>
+<h3>This is external CSS</h3>
+</body>
+</html>
+------------------------------------------------------------------------------------
+
+
+
+
+
