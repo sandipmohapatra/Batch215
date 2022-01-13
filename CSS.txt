@@ -109,7 +109,7 @@ background-color:#b0c4de;
 </head>
 <body>
 <div>
-<h1>This is a heading tag</h1>
+<h1><center>This is a heading tag</center></h1>
 <h2>This is a heading tag</h2>
 This text is inside the div tag.
 <p>This is a text inside the paragraph tag</p>
@@ -118,11 +118,132 @@ There is a question how to change color in between a line<span style="color:red;
 </body>
 </html>
 -----------------------------------------------------
+2)CSS id selector :-
+The id selector is used for unique element.
+We use # for id . 
+----------------------------------------------
+Example-3
+---------------------
+<html>
+<head>
+<style>
+#para
+{
+text-align:center;
+color:blue;
+}
+</style>
+</head>
+<body>
+<p id="para">This is id tag used for Single element</p>
+<p id="para">This is id tag used for Single element</p>
+</body>
+</html>
+------------------------------------------------------------------------------
+CSS Class selector :- It is used for multiple elements.
+We use (.) for the class selector.
+--------------------------------------------------------------
+Example-4
+---------------------
+<html>
+<head>
+<style>
+.para
+{
+text-align:center;
+color:blue;
+}
+</style>
+</head>
+<body>
+<h1 class="para">This is id tag used for Single element</h1>
+<h2 class="para">This is id tag used for Single element</h2>
+<p class="para">This is id tag used for Single element</p>
+<p class="para">This is id tag used for Single element</p>
+</body>
+</html>
+----------------------------------------------------------------------------------------
+CSS Class selector for specific element :-
+This will effect the specific element only.
+The h1 and h2 will not be effected.
+-------------------------------------------------------------------
+<html>
+<head>
+<style>
+p.para
+{
+text-align:center;
+color:blue;
+}
+</style>
+</head>
+<body>
+<h1 class="para">This is id tag used for Single element</h1>
+<h2 class="para">This is id tag used for Single element</h2>
+<p class="para">This is id tag used for Single element</p>
+<p class="para">This is id tag used for Single element</p>
+</body>
+</html>
+----------------------------------------------------------------------------------
+4)CSS Universal selector :- we use (*) or wildcard character for this.
+It will be applied to all elements.
+------------------------------------------------------------------------------------------------
+ <html>
+<head>
+<style>
+*
+{
+text-align:center;
+color:blue;
+}
+</style>
+</head>
+<body>
+<h1>This is id tag used for Single element</h1>
+<h2>This is id tag used for Single element</h2>
+<h3>This is id tag used for Single element</h3>
+<h4>This is id tag used for Single element</h4>
+<p>This is id tag used for Single element</p>
+<p>This is id tag used for Single element</p>
+</body>
+</html>
+--------------------------------------------------------------------------------------
+5)CSS Group selector :- The common element can form a group.
+h1{background-color:yellow;}
+h2{background-color:yellow;}
+h3{background-color:yellow;}
+p{background-color:yellow;}
 
+So in this case we can write in a group.
 
-
-
-
+h1,h2,h3,p{background-color:yellow;}
+-------------------------------------------------------------------------
+Example-6
+----------------------
+<html>
+<head>
+<style>
+h1,h2,h3,h4
+{
+text-align:center;
+color:blue;
+}
+p
+{
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+<h1>This is id tag used for Single element</h1>
+<h2>This is id tag used for Single element</h2>
+<h3>This is id tag used for Single element</h3>
+<h4>This is id tag used for Single element</h4>
+<p>This is id tag used for Single element</p>
+<p>This is id tag used for Single element</p>
+</body>
+</html>
+---------------------------------------------------------------------
 
 
 
