@@ -299,5 +299,44 @@ color:red;
 </body>
 </html>
 -----------------------------------------------------------------------------------------
+cellspacing=10 :- It is the space between the cells.
+cellpadding=5 :- It is the space between the border from all sides.
+-----------------------------------------------------------------------------------------------------
+List :-
+We have 
+1)order list (numeric list) 
+2)unorder list (bulleted list)
+3)Desription list 
+-------------------------------------------------------------------
+example-10
+---------------------
+<html>
+<body>
+<ol>
+<li>Sai</li>
+<li>Kiran</li>
+<li>Madhu</li>
+<li>Gopal</li>
+</ol>
+<ul>
+<li>Sai</li>
+<li>Kiran</li>
+<li>Madhu</li>
+<li>Gopal</li>
+</ul>
 
-
+<dl>
+<dt>Mphasis Batch 205<dt>
+<dd>-There are 57 students </dd>
+<dt>Mphasis Batch 215<dt>
+<dd>-There are 37 students </dd>
+</dl>
+</body>
+</html>
+-----------------------------------------------------------------------
+<ol> ---order list
+<ul> ---unorder list
+<dl> --- This tag defines the starting of the list
+<dt> ---The term of the list
+<dd> --- The term defination.
+-------------------------------------------------------
