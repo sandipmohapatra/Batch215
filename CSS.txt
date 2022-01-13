@@ -16,3 +16,113 @@ we use external css which will save lot of work.
 Internal style sheet :- it is written inside the html page.It is used with the html tag.We can also create our own tag.
 ---------------------------------
 Example-1
+----------------------
+<html>
+<head>
+<title>This is my first page</title>
+<style>
+h1
+{
+background-color:cyan;
+color:red;
+}
+h2
+{
+background-color:yellow;
+color:red;
+}
+body
+{
+background-color:pink;
+}
+x1
+{
+background-color:green;
+}
+p
+{
+font-family:"Times New Roman";
+font-size:50px;
+color:red;
+}
+</style>
+</head>
+<body>
+<h1><center>This a Internal CSS Example</center></h1>
+<h2><center>Welcome All To Internal CSS Example</center></h2>
+<x1>This is our own Tag</x1>
+<p>This is a paragraph Tag</p>
+<p>This is a paragraph Tag</p>
+<p>This is a paragraph Tag</p>
+</body>
+</html>
+------------------------------------------------
+h1
+{
+background-color:cyan;
+color:red;
+}
+
+syntax:-
+
+selector {declaration}
+
+selector {property:value;}
+----------------------------------------------------------------------
+In this case h1 is the selector
+background-color is the property .
+cyan is the value.
+we can have multiple declaration.
+---------------------------------------------------------------------------
+color:red in this color indicates the font color.
+-----------------------------------------------------------------------------
+There are 5 types of selectors
+-----------------------------------------------
+1)CSS element selector
+2)CSS id selector
+3)CSS Class selector
+4)CSS Universal selector
+5)CSS Group selector
+-------------------------------------------------------------
+Example-2
+-----------------
+<html>
+<head>
+<style>
+h1
+{
+background-color:yellow;
+}
+h2
+{
+background-color:#64D62E ;
+}
+p
+{
+background-color:#e0ffff;
+}
+div
+{
+background-color:#b0c4de;
+}
+</style>
+</head>
+<body>
+<div>
+<h1>This is a heading tag</h1>
+<h2>This is a heading tag</h2>
+This text is inside the div tag.
+<p>This is a text inside the paragraph tag</p>
+There is a question how to change color in between a line<span style="color:red;">How can we change color inside a line ?</span><span style="color:blue;">We have to user span tag for it.</span>This was the question by Jai.
+</div>
+</body>
+</html>
+-----------------------------------------------------
+
+
+
+
+
+
+
+
