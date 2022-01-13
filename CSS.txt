@@ -119,7 +119,7 @@ There is a question how to change color in between a line<span style="color:red;
 </html>
 -----------------------------------------------------
 2)CSS id selector :-
-The id selector is used for unique element.
+The id selector is used for unique/single element.
 We use # for id . 
 ----------------------------------------------
 Example-3
@@ -164,6 +164,7 @@ color:blue;
 </html>
 ----------------------------------------------------------------------------------------
 CSS Class selector for specific element :-
+-------------------------------------------------------------------
 This will effect the specific element only.
 The h1 and h2 will not be effected.
 -------------------------------------------------------------------
@@ -218,7 +219,7 @@ So in this case we can write in a group.
 
 h1,h2,h3,p{background-color:yellow;}
 -------------------------------------------------------------------------
-Example-6
+Example-7
 ----------------------
 <html>
 <head>
@@ -244,6 +245,36 @@ background-color:yellow;
 </body>
 </html>
 ---------------------------------------------------------------------
+example-8
+---------------------
+<html>
+<head>
+<style>
+th
+{
+color:green;
+}
+td
+{
+color:blue;
+}
+table,td,th
+{
+border:1px solid red;
+}
+</style>
+</head>
+<table>
+<tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
+<tr><td>HTML</td><td>HTML</td><td>HTML</td><td>HTML</td><td>HTML</td></tr>
+<tr><td>CSS</td><td>CSS</td><td>CSS</td><td>CSS</td><td>CSS</td></tr>
+<tr><td>JAVASCRIPT</td><td>JAVASCRIPT</td><td>JAVASCRIPT</td><td>JAVASCRIPT</td><td>JAVASCRIPT</td></tr>
+<tr><td>ANGULAR</td><td>ANGULAR</td><td>ANGULAR</td><td>ANGULAR</td><td>ANGULAR</td></tr>
+</table>
+<body>
 
+</body>
+</html>
+----------------------------------------------------------------------------------------
 
 
