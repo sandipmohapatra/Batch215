@@ -1,0 +1,27 @@
+Javascript
+------------------
+1)Java script is case sensitive.
+2)It is embedded with html.
+3)It is supported by advance browser.
+4)Java script support object oriented program.
+class and object.
+example:- student class have rollno,name,address,email,phoneno;
+all together forms a class.
+They are single variables combined together.Like we have structure in c.
+Object is a reference pointer to the class.with the object we can access the class.
+5)We have event handler.example:-onClick,onBlur.
+6)In javascript we have only one datatype that is var.
+----------------------------------------------------------------------------------------------  
+Example-1
+--------------------
+<html>
+<head>
+<title>This is my first Javascript example</title>
+<script>
+document.write("Welcome to JavaScript");
+alert("Welcome to JavaScript"');
+</script>
+</head>
+<h1>Welcome to JavaScript</h1>
+</html>
+-------------------------------------------------------------------------
