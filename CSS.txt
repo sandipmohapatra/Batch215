@@ -385,7 +385,79 @@ first.html
 <h3>This is external CSS</h3>
 </body>
 </html>
-------------------------------------------------------------------------------------
+---------------------------------------Assignment-2---------------------------------------------
+*execute css programs and bootstrap pprograms
+----------------------------------------------------------------------------------------
+1)construct the covid-19 project with bootstrap.
+create a project on covid-19 wave-3 
+put backgrounds images /background plain then use <img src=""> 
+1)registration /login
+2)list of doctors from a table
+3)Book a doctor by checking the list.
+4)Book a bed
+5)Book an ambulance
+6)Your Contact details
+7)FeedBack
+-------------------------------------------------------------------------------------------------------
+CSS Margins
+-------------------
+The css margin is use to create space around the elements.
+It set the size of the white space outside or inside the border.
+We can give space on the top,right,bottom and left of the element.
+margin-top
+margin-right
+margin-bottom
+margin-left
+-----------------------------------------------------------------------------------------------  
+float property
+It is used to wrap text around images.
+-----------------------------------------------------
+clear property
+The clear property is used to control the behavior of floating elements
+---------------------------------------------------------------------------------------------
+google form,google map
+------------------------------------------
+to add them to the project we use them.   
+<iframe> </iframe>
+step 1:https://maps.google.com/
+
+step 2:- click on share.
+
+step 3:-embed a map
+
+step 4:-copy html
+
+step 5:- paste it on your project.
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
