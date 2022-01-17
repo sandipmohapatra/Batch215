@@ -429,6 +429,25 @@ step 4:-copy html
 
 step 5:- paste it on your project.
 ------------------------------------------------------------
+google form 
+------------------------
+step 1:https://docs.google.com/forms/u/0/
+step 2:Blank form
+step 3:QUESTION
+step 4:Responses
+step 5:click on green +
+step 6: create a new spreed sheet --create
+step 7:click on send
+step 8:click on email,enter your email.
+step 9:click on <> embed
+step10:- copy the <iframe link> .paste it on your project.
+------------------------------------------------------
+excel sheet link paste
+-------------------------------
+https://docs.google.com/spreadsheets/d/1x-APfe2C1RhVYnZIJWhPxu6ziUZRirQ20UgIe0vZnM8/edit?resourcekey#gid=948476060
+
+
+
 
 
 
