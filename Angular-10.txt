@@ -52,6 +52,23 @@ C:\Users\sandip\batch215\src\app>ng g c login --skipTests
 2)app.module.ts :-
 make change in the bootstrap file.[]
 -------------------------------------------------------------
+<h2>At Mphasis Registration Page</h2>
+<table>
+<tr><td>Enter your Name</td><td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter your Name</td><td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter your Name</td><td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter your Name</td><td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter your Name</td><td><input type=text name=t1 size=20></td></tr>
+<tr><td></td><td><input type=submit value=submit></td></tr>
+</table>
+-----------------------------------------------------
+login
+registration page
+contact page
+book a bed
+book a doctor
+book a ambulance
+-----------------------------------------------
 
 
 
