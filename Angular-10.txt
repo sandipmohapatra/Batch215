@@ -1,0 +1,28 @@
+software requirement :-
+1)download nodejs
+2)Editor Visual studio code.
+-------------------------------------------------------------------
+1)goto the command prompt :- node -v
+2)npm install -g @angular/cli
+3)ng new batch215 
+4)cd batch215
+5)ng serve
+6)open on browser localhost:4200
+------------------------------------
+open visual studio code
+File -->open folder -->browse
+-----------------------------------------------------
+Example-1
+--------------------
+app.component.html
+----------------------------------
+<h1>Welcome to Angular10</h1><br>
+<h2>At Mphasis Lerning Center</h2>
+Enter your Name<input type=text name=t1 size=20>
+----------------------------------------------------------------
+app.component.css
+------------------------------------
+h1{
+    color:blue;
+}
+---------------------------------------------------------
