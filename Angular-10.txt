@@ -32,9 +32,26 @@ ts is typescript.
 1)Advanced websites are created with angular.
 2)cricbuzz :- to see the cricket match.In this whole page will not render or update.Only the modified part will update.
 3)Angular is an open source,cross platform framework.
+-------------------------------------------------------------------------------
+app is the folder name.
+1)app.component.html ----presentation(view)
+2)app.component.css---style
+3)app.component.ts ---logic
+4)app.module.ts ---to store the component details.
+-------------------------------------------------------------------------------------
+to create one more comopent ----(class)
+1)ng g c login --skipTests
 
+first goto 
+C:\Users\sandip\batch215\src\app>ng g c login --skipTests
 
-
+------------------------------------------------------------------------------------------------
+2)we have to do 2 changes
+------------------------------------------------------------
+1)index.html:-make change in the tag.<></>
+2)app.module.ts :-
+make change in the bootstrap file.[]
+-------------------------------------------------------------
 
 
 
