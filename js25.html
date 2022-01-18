@@ -1,0 +1,15 @@
+<html>
+<script>
+function fun()
+{
+var sysdate=new Date();
+document.getElementById("abc").innerHTML=sysdate.toLocaleTimeString();
+} 
+setInterval(fun,4000);
+</script>
+
+
+<h3> Update the time every 4 seconds </h3>
+<h3> The current time is 
+<div id="abc"></div></h3>
+</html>
