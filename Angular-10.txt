@@ -3,10 +3,10 @@ software requirement :-
 2)Editor Visual studio code.
 -------------------------------------------------------------------
 1)goto the command prompt :- node -v
-2)npm install -g @angular/cli
-3)ng new batch215 
-4)cd batch215
-5)ng serve
+2)npm install -g @angular/cli-- installing angular 
+3)ng new batch215 ---300mb download the library files.
+4)cd batch215 ---------start from here.
+5)ng serve ---starting the server
 6)open on browser localhost:4200
 ------------------------------------
 open visual studio code
@@ -26,3 +26,23 @@ h1{
     color:blue;
 }
 ---------------------------------------------------------
+Notes:-
+we will write code in javascript (.js) after compilation it will converted to .ts file.
+ts is typescript.
+1)Advanced websites are created with angular.
+2)cricbuzz :- to see the cricket match.In this whole page will not render or update.Only the modified part will update.
+3)Angular is an open source,cross platform framework.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
