@@ -69,7 +69,37 @@ book a bed
 book a doctor
 book a ambulance
 -----------------------------------------------
-
+What is the work of the server.
+It will compile the .ts code into .js code.It will display the error message.
+-------------------------------------------------------------------
+@Component({
+  selector: 'app-login',------------------------------------index.html
+  templateUrl: './login.component.html',-------------this links to a .html page
+  styleUrls: ['./login.component.css']-----------------this links to a .css page 
+})
+----------------------------------------------------------------------
+template: In this we have to mention the html page there itself.
+style:In this we have to mention the style there it self.
+-----------------------------------------------------------------------------
+npm install -g typescript@latest
+-------------------------------------------------------- 
+test1.ts
+-----------------
+let uname:string="Sahil";
+let age:number=20;
+console.log("Hello "+uname);
+console.log("Your age is  "+age);
+-------------------------------------------------------
+to compile :- tsc test1.ts
+to run :- node test1.js
+----------------------------------------------------------
+after compilation .ts file will be converted to .js
+--------------------------------------------------------------
+var uname = "Sahil";
+var age = 20;
+console.log("Hello " + uname);
+console.log("Your age is  " + age);
+----------------------------------------------------------- 
 
 
 
