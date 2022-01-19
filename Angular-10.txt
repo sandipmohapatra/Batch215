@@ -100,7 +100,50 @@ var age = 20;
 console.log("Hello " + uname);
 console.log("Your age is  " + age);
 ----------------------------------------------------------- 
-
+step 1:-create a file inside app by any name 'example1.ts' 
+step 2:-change in index.html
+step 3:-in app.module 
+import { TestComponent } from './example1';
+add in the declaration :-TestComponent
+add in the bootstrap :-[TestComponent]
+step 4:- ng serve 
+Example-1
+------------------
+import {Component} from '@angular/core';
+@Component({
+selector:'app-sahil',
+template:`
+<p>Hello my name is {{name}}</p>
+<p>Hello my email is {{email}}</p>
+<p>My address is {{address.street}}{{address.loc}}
+{{address.state}}{{address.city}}</p>
+<p><Button (click)="sayName()">Say your Details</Button></p>
+`
+})
+export class TestComponent
+{
+    name:string;
+    email:string;
+    address:any;
+constructor()
+{
+    this.name='Sahil Khan';
+    this.email='sahil@gmail.com';
+    this.address=
+    {
+        street:101,
+        loc:'Shivaji Nagar',
+        state:'Karnataka',
+        city:'Bangalore'
+    }}
+        sayName()
+    {
+        console.log("My name is ",this.name);
+        console.log("My email is ",this.email);
+        console.log("My address is ",this.address);
+    }
+}
+--------------------------------------------------------------------------------------------
 
 
 
