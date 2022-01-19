@@ -163,7 +163,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'batch215';
 }
------------------------------------------------------------------------------
+-------------------------------------app.module.ts----------------------------------------
 step 2:-
 app.module.ts
 ---------------------
@@ -183,7 +183,7 @@ step 5:-
 ------------
 bootstrap: [AppComponent]
 ------------------------------------------------------
-appp.module.ts
+app.module.ts
 ----------------------
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -304,8 +304,37 @@ Register.Register.html
 <button type="submit" class="btn btn-default">Submit</button> 
   </form></div></body></html>
 -------------------------------------------------------------------------------------------------------
+Task:- 3pm to 5pm
+-------------------------------
+1)Hotel Management System--book table,book room,login,registration.,contact,FeedBack
+2)Cab Management System ---Book OLA cab,contact,feedback,Location
+---------------------------------------------------------
+Example-3
+--------------------------------------
+import { Component } from '@angular/core';
 
-
+@Component({
+  selector: 'app-test1',
+  templateUrl: './test1.component.html',
+  styleUrls: ['./test1.component.css']
+})
+export class Test1Component 
+{
+public product=
+{
+  Name:'Samsung TV',
+  Price:45000.00,
+}}
+------------------------------------------------------------------------------------
+<dl>
+    <dt>Name</dt>
+    <dd>{{product.Name}}</dd>
+    <dd><input type=text value={{product.Name}}></dd>
+    <dt>Price</dt>
+    <dd>{{product.Price}}</dd>
+    <dd innerHTML={{product.Price}}></dd>
+    </dl>
+---------------------------------------------------------------------------
 
 
 
