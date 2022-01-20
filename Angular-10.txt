@@ -385,6 +385,7 @@ In this when you change the name will update.
 ------------------------------------------------------------------------------------------------------ 
 when we use [(ngModule)] we have to import 
 **import { FormsModule } from '@angular/forms'; in the app.module.ts
+add in import also.
 -----------------------------------------------------------------------------------------------------
 import { Component } from '@angular/core';
 @Component({
@@ -524,9 +525,54 @@ export class IfDemoComponent {
 </div>
 </div>
 --------------------------------------------------------------------------------------------------------
+ngFor :-
+1.fordemo.component.ts
+import { Component } from '@angular/core';
 
-
-
+@Component({
+  selector: 'app-fordemo',
+  templateUrl: './fordemo.component.html',
+  styleUrls: ['./fordemo.component.css']
+})
+export class FordemoComponent {
+  public categories = ['Electronics', 'Footwear', 'Fashion'];
+  public menudata = [
+    {Category: 'Electronics', Products: ['Samsung TV', 'JBL Speaker']},
+    {Category: 'Footwear', Products: ['Nike Casuals', 'Lee Cooper Boot']}
+  ];
+}
+-----------------------------------------------------------------------------------------------------------------
+2.fordemo.component.html
+<div class="container-fluid">
+    <div class="row">
+     <div class="col-3">
+       <h3>Categories</h3>
+       <ol>
+           <li *ngFor="let item of categories">{{item}}</li>
+       </ol>
+     </div>
+     <div class="col-3">
+       <h3>Categories</h3>
+       <select class="form-control">
+           <option *ngFor="let item of categories">
+               {{item}}
+           </option>
+       </select>
+     </div>
+     
+    </div>
+       </div>
+----------------------------------------------------------------------------------------------
+Task :- 
+--------------------------------------------------------------------------------
+insert images and use toggle button for
+shoes
+jeans
+speakers
+-------------------------------------------------------------
+create a program to show stock items for 
+vegetables,electronic goods,shoes and jeans
+----------------------------------------------------------------------
 
 
 
