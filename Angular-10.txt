@@ -384,8 +384,8 @@ Enter your name<input type=text [(ngModel)]="name" size=20>
 In this when you change the name will update.
 ------------------------------------------------------------------------------------------------------ 
 when we use [(ngModule)] we have to import 
-**import { FormsModule } from '@angular/forms';
-------------------------------------------------------------------------------
+**import { FormsModule } from '@angular/forms'; in the app.module.ts
+-----------------------------------------------------------------------------------------------------
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-twowaybinding',
@@ -464,7 +464,66 @@ public InStock=true;
          </body>
         </html>
 -----------------------------------------------------------------------------------------------------
+IfDemo example
+------------------------------
+import { Component } from '@angular/core';
 
+@Component({
+  selector: 'app-if-demo',
+  templateUrl: './if-demo.component.html',
+  styleUrls: ['./if-demo.component.css']
+})
+export class IfDemoComponent {
+
+  public product=
+  {
+    Name:'NikeShoes',
+    Price:4500.00,
+    Photo:'assets/shoe.webp'
+  };
+  public showImage = false;
+  public btnText = 'Show';
+
+  public TogglePreview()
+  {
+    this.showImage = (this.showImage==false)?true:false;
+    this.btnText = (this.btnText=='Show')?'Hide':'Show';
+  }
+
+}
+----------------------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<div class="container-fluid">
+<h2>Product Details</h2>
+<div class="row">
+  <div class="col-3">
+      <dl>
+          <dt>Name</dt>
+          <dd>{{product.Name}}</dd>
+          <dt>Price</dt>
+          <dd>{{product.Price}}</dd>
+      </dl>
+      <button (click)="TogglePreview()" class="btn btn-primary btn-sm btn-block">{{btnText}} Preview</button>
+  </div>
+  <div class="col-9">
+    <div *ngIf="showImage">
+        <img [src]="product.Photo" height="200" width="200" >
+       <img src="assets/shoe.webp" height="200" width="200" > 
+    </div>
+  </div>
+</div>
+</div>
+--------------------------------------------------------------------------------------------------------
 
 
 
