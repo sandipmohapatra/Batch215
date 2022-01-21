@@ -587,7 +587,7 @@ import {PipeTransform} from '@angular/core'
 example:- @Pipe({name:"uppercase"})
 8)Every pipe implements "PipeTransform" and use the transform() method.
 -------------------------------------------------------------------------------------------------------
-example:-
+example-1:-
 
 import { Component } from '@angular/core';
 @Component({
