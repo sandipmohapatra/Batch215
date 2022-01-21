@@ -721,6 +721,61 @@ import { Component } from '@angular/core';
   })
 export class CustompipeComponent {}
 ----------------------------------------------------------------------------
+Example-3
+----------------
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-custompipe',
+  templateUrl: 'custompipe.component.html'
+  })
+export class CustompipeComponent {
+public msg='welcome To Angular-10';
+}
+--------------------------------------------------------------------
+import {Pipe,PipeTransform} from '@angular/core';
+@Pipe({name:'sentancecase'})
+
+export class Multiplierpipe implements PipeTransform
+{
+    transform(str:string):string 
+    {
+        let firstChar=str.charAt(0);
+        let restChar=str.substring(1);
+       let sentance=firstChar.toUpperCase()+restChar.toLowerCase();
+        return sentance;
+    }
+}
+--------------------------------------------------------------------
+<p>{{msg|sentancecase}}</p>
+-----------------------------------------------------------------------------------
+Example-1
+LikeDisLikeDemo
+----------------
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-like-demo',
+  templateUrl: './like-demo.component.html',
+  styleUrls: ['./like-demo.component.css']
+})
+export class LikeDemoComponent
+{
+public products=[
+{Name:'JBL speaker',Photo:'assets/shoe.webp',Likes:0,Dislikes:0},
+{Name:'Nike Shoes',Photo:'assets/shoe.webp',Likes:0,Dislikes:0},
+{Name:'shirt',Photo:'assets/shoe.webp',Likes:0,Dislikes:0}
+];
+
+public LikesCounter(item:any)
+{
+  item.Likes++;
+}
+public DislikesCounter(item:any)
+{
+  item.Dislikes++;
+}
+
+}
+-------------------------------------------------------------------------------
  
 
 
