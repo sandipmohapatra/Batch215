@@ -607,7 +607,43 @@ The name is {{Namelist[1]|uppercase}}<br>
 The name is {{Namelist[2]|uppercase}}<br>
 </div>
 -----------------------------------------------------------------------
-
+Example-2
+---------------------
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-pipe-demo',
+  templateUrl: './pipe-demo.component.html',
+  styleUrls: ['./pipe-demo.component.css']
+})
+export class PipeDemoComponent {
+Name: string ='Sai Gopal';
+Namelist: string[]=["bibhudatta","Madhavi","sahil"]
+public product=
+{
+  Name:'Samsung TV',
+  Price:45000.00,
+  Mfd:new Date('01-10-2022')
+}
+  }
+-------------------------------------------------------------------
+<div>
+The name is {{Name}}<br>
+The Listname is {{Namelist[0]|uppercase}}<br>
+The name is {{Namelist[1]|uppercase}}<br>
+The name is {{Namelist[2]|uppercase}}<br>
+The product name is{{product.Name|titlecase}}<br>
+The product price is{{product.Price|number}}<br>
+The product price is{{product.Price|currency}}<br>
+The product price is{{product.Price|currency:'INR'}}<br>
+The product price is{{product.Price|currency:'&#8377;'}}<br>
+The product Manufacturing Date is{{product.Mfd|date:'MMM-dd-yyyy'}}<br>
+The product Manufacturing Date is{{product.Mfd|date:'shortDate'}}<br>
+The product Manufacturing Date is{{product|json}}<br>
+The listName is {{Namelist[0]|slice:1:3}}<br>
+The listName is {{Namelist[0]|slice:1:5}}<br>
+The listName is {{Namelist[0]|slice:0:5}}<br>
+</div>
+---------------------------------------------------------------------------------------------
 
 
 
