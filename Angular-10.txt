@@ -644,9 +644,56 @@ The listName is {{Namelist[0]|slice:1:5}}<br>
 The listName is {{Namelist[0]|slice:0:5}}<br>
 </div>
 ---------------------------------------------------------------------------------------------
+Custom pipe :- 
+syntax to create a custom pipe
+------------------------------------------
+import {Pipe,PipeTransform} from '@angular/core';
+@Pipe({name:'Pipename'})
+export class Pipeclass implements PipeTransform
+{
+transform(parameters):returntype
+{}
+}
+-------------------------
+1)Pipename :- name of the custom pipe.
+2)Pipeclass :- This is the name of the class assigned to the custom pipe.
+3)transform(parameters):returntype
+ it is the function defined for the pipe with parameter which has to be passed to the pipe and the return type of the
+output.
+-----------------------------------------------------------------------------------------
+ Example-1
+--------------------
+custompipe.multiplier.ts (we have to create a new .ts file)
+-----------------------------------------
+import {Pipe,PipeTransform} from '@angular/core';
+@Pipe({name:'Multiplier'})
 
-
-
+export class Multiplierpipe implements PipeTransform
+{
+    transform(value: number, Multiply: number):number 
+    {
+        return Multiply * value;
+    }
+}
+--------------------------------------------------------------
+custompipe.component.ts
+------------------------------------------
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-custompipe',
+  template: `
+  <p>The Result is {{5|Multiplier:20}}</p><br>
+  <p>The Result is {{6|Multiplier:20}}</p><br>
+  <p>The Result is {{7|Multiplier:20}}</p><br>
+  <p>The Result is {{8|Multiplier:20}}</p><br>
+    `
+  })
+export class CustompipeComponent {}
+-----------------------------------------------------------------------------------------
+we have to add in app.module.ts the multiplier.ts details.
+1)import the class
+2)add the class in declaration.
+-------------------------------------------------------------------------------------------------------
 
  
 
