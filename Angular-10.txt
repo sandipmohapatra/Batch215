@@ -573,8 +573,40 @@ speakers
 create a program to show stock items for 
 vegetables,electronic goods,shoes and jeans
 ----------------------------------------------------------------------
+Angular Pipe
+------------------------
+1)pipe is used to transform data.
+example:- converting a string to uppercase or lowercase.
+2)Data may come to angular from various source so the data type of source provider and datatype of the typescript will vary .so to convert to typescript format we have to use pipe.
+3)pipe is used to formating and filtering the data.
+4)All pipes are derived from 'PipeTransform'.
+5)we have to import 
+import {PipeTransform} from '@angular/core'
+6)we have some pre-defined pipes and we can also create custom pipes.
+7)Every pipe is defined with a pipe name,which is configured uusing "@Pipe()".
+example:- @Pipe({name:"uppercase"})
+8)Every pipe implements "PipeTransform" and use the transform() method.
+-------------------------------------------------------------------------------------------------------
+example:-
 
-
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-pipe-demo',
+  templateUrl: './pipe-demo.component.html',
+  styleUrls: ['./pipe-demo.component.css']
+})
+export class PipeDemoComponent {
+Name: string ='Sai Gopal';
+Namelist: string[]=["bibhudatta","Madhavi","sahil"]
+  }
+-------------------------------------------------------------------------------------
+<div>
+The name is {{Name}}<br>
+The Listname is {{Namelist[0]|uppercase}}<br>
+The name is {{Namelist[1]|uppercase}}<br>
+The name is {{Namelist[2]|uppercase}}<br>
+</div>
+-----------------------------------------------------------------------
 
 
 
