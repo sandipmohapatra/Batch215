@@ -663,8 +663,10 @@ output.
 -----------------------------------------------------------------------------------------
  Example-1
 --------------------
+we have to create this file because it is like a function which can be re-used.
+----------------------------------------------------------------------------
 custompipe.multiplier.ts (we have to create a new .ts file)
------------------------------------------
+----------------------------------------------------------------------------
 import {Pipe,PipeTransform} from '@angular/core';
 @Pipe({name:'Multiplier'})
 
@@ -694,7 +696,31 @@ we have to add in app.module.ts the multiplier.ts details.
 1)import the class
 2)add the class in declaration.
 -------------------------------------------------------------------------------------------------------
+Example-2
+---------------------
+import {Pipe,PipeTransform} from '@angular/core';
+@Pipe({name:'square'})
 
+export class Multiplierpipe implements PipeTransform
+{
+    transform(value: number):number 
+    {
+        return value * value;
+    }
+}
+-------------------------------------------------------------------------
+import { Component } from '@angular/core';
+@Component({
+  selector: 'app-custompipe',
+  template: `
+  <p>The Result is {{5|square}}</p><br>
+  <p>The Result is {{6|square}}</p><br>
+  <p>The Result is {{7|square}}</p><br>
+  <p>The Result is {{8|square}}</p><br>
+    `
+  })
+export class CustompipeComponent {}
+----------------------------------------------------------------------------
  
 
 
