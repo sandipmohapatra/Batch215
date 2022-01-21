@@ -776,7 +776,23 @@ public DislikesCounter(item:any)
 
 }
 -------------------------------------------------------------------------------
- 
+ <h2>Product Catalog</h2>
+<div class="card-deck">
+    <div class="card" *ngFor="let item of products">
+<div class="card-header">
+<h3>{{item.Name}}</h3>
+</div>
+<div class="card-header">
+    <img width="200" height="200"[src]="item.Photo">
+</div>
+<div class="card-footer">
+<div class="btn-group">
+    <button (click)="LikesCounter(item)"class="btn btn-success">[{{item.Likes}}] Likes</button>
+    <button (click)="DislikesCounter(item)"class="btn btn-danger">[{{item.Dislikes}}] Dislikes</button>
+</div>
+</div>
+</div>
+------------------------------------------------------------------------------
 
 
 
