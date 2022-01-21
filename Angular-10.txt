@@ -793,6 +793,23 @@ public DislikesCounter(item:any)
 </div>
 </div>
 ------------------------------------------------------------------------------
+Task -1:-
+
+create a pipe called simpleinterest
+
+pass 3 nos
+1)amount
+2)years
+3)rate
+-----------------------------------
+si=(p*t*r)/100;
+------------------------------------------
+Task-2 
+---------------
+create a project combining *ngIf and like and dis-like
+-------------------------------------------------------------------------------------
+
+
 
 
 
