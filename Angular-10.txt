@@ -864,6 +864,54 @@ constructor(calc:CalcService)
   
 }
 ---------------------------------------------------------------------------
+example-2
+--------------------
+import {Injectable} from '@angular/core'
+@Injectable({
+    providedIn:'root'
+})
+export class CalcService{
+    public add(...params:number[]):number
+    {
+        let result=0;
+        for(let val of params)
+        {
+            result=result+val;
+        }
+        return result;
+    }
+    public sub(a:number,b:number):number
+    {
+        let result=a - b;
+        return result;
+    }
+}
+---------------------------------------------------------
+import { Component } from '@angular/core';
+import { CalcService } from './calculator.service';
+@Component({
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
+})
+export class CalculatorComponent {
+sum:number=0;
+sub:number=0;
+constructor(calc:CalcService)
+{
+  this.sum=calc.add(11,22,3,44);
+  alert("The sum is "+this.sum);
+  console.log("The sum is "+this.sum);
+-----------------------------------------------------------------------------
+    this.sub=calc.sub(11,22);
+    alert("The sub is "+this.sub);
+    console.log("The sub is "+this.sub);
+    
+  } 
+    
+}
+
+---------------------------------------------------------------------------
 
 
 
