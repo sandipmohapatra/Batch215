@@ -808,8 +808,62 @@ Task-2
 ---------------
 create a project combining *ngIf and like and dis-like
 -------------------------------------------------------------------------------------
+Angular Service:-
+-------------------------------
+It is like a function which can be re-used in any of the application.
+Difference between function and service
+---------------------------------------------------------
+Function is written within the program which can be used within the application only.example :-showData().
+But services can be used in all application according to requirement.
+It is not limited to single application.
+-----------------------------------------------------------
+we have to create a service in a separate folder and we have to inject it to a component where we want to use the service.
+----------------------------------------------------------------------------------------------
+step 1: import {Injectable} from '@angular/core'
+step 2:@Injectable()
+step 3:providedIn:'root'
 
-
+--------------------------------------------
+example:-
+calculator.service.ts
+----------------------------------
+import {Injectable} from '@angular/core'
+@Injectable({
+    providedIn:'root'
+})
+export class CalcService{
+    public add(...params:number[]):number
+    {
+        let result=0;
+        for(let val of params)
+        {
+            result=result+val;
+        }
+        return result;
+    }
+}
+--------------------------------------------------------------------
+calculator.component.ts
+-------------------------------
+import { Component } from '@angular/core';
+import { CalcService } from './calculator.service';
+@Component({
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
+})
+export class CalculatorComponent {
+sum:number=0;
+constructor(calc:CalcService)
+{
+  this.sum=calc.add(11,22,3,44);
+  alert("The sum is "+this.sum);
+  console.log("The sum is "+this.sum);
+  
+}
+  
+}
+---------------------------------------------------------------------------
 
 
 
