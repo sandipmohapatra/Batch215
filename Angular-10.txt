@@ -912,8 +912,92 @@ constructor(calc:CalcService)
 }
 
 ---------------------------------------------------------------------------
+Capcha example
+--------------------------
+Math.Random=.45433666*10=4.4433666===round 4
+-----------------------------------------------------------------------------
+capcha.compoonent.ts
+---------------------------------------
+import { Component } from '@angular/core';
+import { YogeshService } from './capcha.service';
+@Component({
+  selector: 'app-capcha',
+  templateUrl: './capcha.component.html',
+  styleUrls: ['./capcha.component.css']
+})
+export class CapchaComponent {
+constructor(private cap:YogeshService){}
+public code=this.cap.GenerateService();
+public refreshClick()
+{
+this.code=this.cap.GenerateService();
+}
+  }
+-----------------------------------------------------------------------------------
 
-
+------------------------------------------------------------------------------------
+capcha.compoonent.html
+--------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<div class="container-fluid">
+    <div class="form-group">
+<label>User name</label>
+    <div>
+        <input type="text" class="form-control">
+        </div>
+    </div>
+<div class="form-group">
+    <label>Password</label>
+        <div>
+            <input type="password" class="form-control">
+            </div>
+    </div>
+<div class="form-group">
+        <label>Varify Code</label>
+            <div>
+{{code}} <button (click)="refreshClick()" class="btn">Click</button>
+                </div>
+        </div>
+        <div>
+        <!--<input type=text class="form-control"> -->
+    </div>
+    <div class="form-control">
+<br><br><button class="btn btn-primary">Login</button>
+    </div>
+</div>
+-----------------------------------------------------------------------------------------------
+capcha.service.ts
+-----------------------------
+import {Injectable} from '@angular/core'
+@Injectable({
+    providedIn:'root'
+})
+export class YogeshService
+{
+    public GenerateService()
+    {
+        let a=Math.random()*10;
+        let b=Math.random()*10;
+        let c=Math.random()*10;
+        let d=Math.random()*10;
+        let e=Math.random()*10;
+        let f=Math.random()*10;
+        let code=`${Math.round(a)} ${Math.round(b)} ${Math.round(c)}
+        ${Math.round(d)} ${Math.round(e)} ${Math.round(f)}`;
+        return code;
+        
+    } 
+}
+--------------------------------------------------------------------------------------------
 
 
 
