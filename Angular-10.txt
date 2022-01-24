@@ -1113,8 +1113,201 @@ ngOnDestroy - This is the cleanup phase just before Angular destroys the directi
 Angular-project link
 ---------------------------------------
 https://drive.google.com/file/d/17lQEXfqsgEuxmo_XlJXTFgzpu1IYuLdi/view?usp=sharing
+-------------------------------------------------------------------------------------------------------------------------
+Shopping Cart Project
+---------------------------------
+Functions used in the shoppingCart Project
+-------------------------------------------------------------- 
+1)OnCategoryChange():- This is function is to display items on Category change
+we have 3 category :-1)ELECTRONICS items are(jblspeakers,earpods)
+2)FOOTWEAR items are(nike shoes,lee-copper shoes)
+3)FASHION items are(shirt,jeans)
+--------------------------------------------------------------------------------------
+2)onProductChanged() :- this will display the product discription on the change of the product
+Name of the product,price of the product,photo of the product
+------------------------------------------------------------------------------------------------------------------
+3)AddToCartClick():- this is used to add the product to the cart.
+------------------------------------------------------------------------------------------------
+4)ToggleCartDisplay():-it is used to display/hide the cart product.
+-----------------------------------------------------------------------------------------------
+5)DeleteCartItem(index:any) :- Items will be stored in an array.it we delete the index value will change.
+-------------------------------------------------------------------------------------------
+shopping.component.ts
+-------------------------------------------
+import { Component} from '@angular/core';
+@Component({
+  selector: 'app-shopping',
+  templateUrl: './shopping.component.html',
+  styleUrls: ['./shopping.component.css']
+})
+export class ShoppingComponent 
+{
+public categories=['Select a Category','Electronics','Footwear','Fashion'];
+public electronics=['Select a Electronics','JBLspeaker','Earpods'];
+public footwear=['Select a Footwear','Nike shoes','lee-Cooper shoes'];
+public fashion=['Select a Fashion','shirt','Jeans'];
+public data=[
+{Name:'JBLspeaker',Price:4500.00,Photo:'assets/jblspeaker.png'},
+{Name:'Earpods',Price:4500.00,Photo:'assets/earpods.png'},
+{Name:'Nike shoes',Price:4500.00,Photo:'assets/shoe.webp'},
+{Name:'lee-Cooper shoes',Price:3500.00,Photo:'assets/leecooper.png'},
+{Name:'shirt',Price:2000.00,Photo:'assets/shirt.png'},
+{Name:'Jeans',Price:2500.00,Photo:'assets/jeans.png'},
+];
+public products:any=[];
+public selectedCategoryName='Select a Category';
+public selectedProductName:any;
+public searchResults:any=[];
+public searchedProduct={
+  Name:'',
+  Price:0,
+  Photo:''
+};
+public cartItems:any=[];
+public cartItemsCount=0;
+public showCart=false;
+public GetCartItemsCount()
+{
+  this.cartItemsCount=this.cartItems.length;
+}
 
+public OnCategoryChange()
+{
+  switch(this.selectedCategoryName)
+  {
+    case "Electronics":
+             this.products=this.electronics;
+        break;
+    case "Footwear":
+             this.products=this.footwear;
+          break;
+    case "Fashion":
+             this.products=this.fashion;
+            break;
+    default:
+             this.products=['select a Category'];
+              break;
+                
+  }
+}
 
+public onProductChanged()
+{
+  this.searchResults=this.data.filter(x=>x.Name==this.selectedProductName);
+  this.searchedProduct={
+Name:this.searchResults[0].Name,
+Price:this.searchResults[0].Price,
+Photo:this.searchResults[0].Photo
+  };
+}
+
+public AddToCartClick()
+{
+  this.cartItems.push(this.searchedProduct);
+  alert('Your Item is Added to the Cart');
+  this.GetCartItemsCount();
+}
+public ToggleCartDisplay()
+{
+  this.showCart=(this.showCart==false)?true:false;
+}
+public DeleteCartItem(index:any)
+{
+  let confirmDelete=confirm('Are you sure you want to Delete?');
+  if(confirmDelete==true)
+  {
+    this.cartItems.splice(index,1);
+    this.GetCartItemsCount();
+  }
+}
+}
+
+------------------------------------------------------------------------------------
+shopping.component.html
+------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<div class="container-fluid">
+    <h2 class="text-center text-primary"><span class="fa fa-shopping-cart"></span>Amazon - Shopping</h2>
+    <div class="row">
+      <div class="col-3">
+          <div class="form-group">
+              <label>Select a Category</label>
+              <div>
+                  <select (change)="OnCategoryChange()" [(ngModel)]="selectedCategoryName" class="form-control">
+                      <option *ngFor="let item of categories">
+                          {{item}}
+                      </option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Select a Product</label>
+              <div>
+                  <select (change)="onProductChanged()" [(ngModel)]="selectedProductName" class="form-control">
+                      <option *ngFor="let item of products">
+                          {{item}}
+                      </option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Preview</label>
+              <div class="card">
+                  <div class="card-header">
+                      <h3>{{searchedProduct.Name}}</h3>
+                  </div>
+                  <div class="card-body text-center">
+                      <img [src]="searchedProduct.Photo" width="200" height="200">
+                  </div>
+                  <div class="card-footer text-center">
+                      <h3>{{searchedProduct.Price | currency:'INR'}}</h3>
+                      <button (click)="AddToCartClick()" class="btn btn-danger btn-block"> <span class="fa fa-shopping-cart"></span>Add to Cart</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-6">
+          <div>
+              <table *ngIf="showCart" style="margin-top: 100px;" class="table table-hover">
+                  <caption>Your Cart Items</caption>
+                  <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Price</th>
+                          <th>Preview</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of cartItems; let i=index">
+                          <td>{{item.Name}}</td>
+                          <td>{{item.Price}}</td>
+                          <td><img width="50" height="50" [src]="item.Photo"></td>
+                          <td>
+                              <button (click)="DeleteCartItem(i)" class="btn btn-danger">Delete Items</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+      <div class="col-3">
+          <div>
+              <button (click)="ToggleCartDisplay()" class="btn btn-danger btn-block"><span class="fa fa-shopping-cart"></span> [{{cartItemsCount}}] Your Cart Items</button>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+-----------------------------------------------------------------------------------------------------------------------------
 
 
 
