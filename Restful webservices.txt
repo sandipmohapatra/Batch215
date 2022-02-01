@@ -170,4 +170,15 @@ public class SpringBootBatch215ex1Application {
 		}
 
 }
---------------------------------------------------------------------------------------------
+-----------------------------------------------------Assignment-1---------------------------------------
+create a application Bank
+create 2 methods input() and display();
+accno,name,balance,address
+Take input from the user.
+----------------------------------------------------------------------
+
+
+
+
+
+
