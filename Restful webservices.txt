@@ -105,4 +105,69 @@ This is assigned to another object .with this object we can access the methods o
 
 example:- @Component("test") :- test is a object of the class Test1.
 So it will create object for the class Test1.
--------------------------------------------------------------------------------------------
+-------------------------------Example-2------------------------------------------------------------
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+@Component("emp")
+public class Employee 
+{
+int empno;
+String name;
+float sal;
+void input(int empno,String name,float sal)
+{
+	this.empno=empno;
+	this.name=name;
+	this.sal=sal;
+}
+void display()
+{
+	System.out.println("the empno is "+empno);
+	System.out.println("the name is "+name);
+	System.out.println("the salary is "+sal);
+	}
+}
+----------------------------------------------------------------------------
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import java.util.*;
+@SpringBootApplication
+public class SpringBootBatch215ex1Application {
+	//ctrl+shift+O
+	public static void main(String[] args)
+	{
+		ApplicationContext ac=SpringApplication.run(SpringBootBatch215ex1Application.class, args);
+		Test1 obj=ac.getBean("test",Test1.class);
+		obj.welcome();
+		System.out.println("the sum is "+obj.sum(5, 6));
+		System.out.println("the sub is "+obj.sub(7,3));
+		
+		Test2 obj1=ac.getBean("test1",Test2.class);
+		obj1.welcomeMphasis();
+		System.out.println("the mul is "+obj1.mul(6, 7));
+		System.out.println("the div is "+obj1.div(14,7));
+		
+		Scanner ob=new Scanner(System.in);
+		System.out.println("Enter a no");
+		int i=ob.nextInt();
+		Test3 ob3=ac.getBean("test2",Test3.class);
+		System.out.println("the square is :"+ob3.square(i));	
+		
+		System.out.println("Enter a empno,name,salary");
+		int empno=ob.nextInt();
+		String name=ob.next();
+		float sal=ob.nextFloat();
+		Employee obj3=ac.getBean("emp",Employee.class);
+				
+		obj3.input(empno, name, sal);
+		obj3.display();
+				
+		}
+
+}
+--------------------------------------------------------------------------------------------
