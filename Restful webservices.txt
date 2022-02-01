@@ -1,0 +1,108 @@
+file->new ->spring starter project
+--------------------------Example-1--------------------
+Test1.java
+----------------------
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+//ctrl+shift+O
+@Component("test")
+public class Test1 
+{
+public void welcome()
+{
+	System.out.println("welcome to Rest WebServices");
+}
+public int sum(int a,int b)
+{
+	return a+b;
+}
+
+public int sub(int a,int b)
+{
+	return a-b;
+}
+
+}
+------------------------------------------------------------------------------------------
+Test2.java
+----------------------
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+//ctrl+shift+O
+@Component("test1")
+public class Test2 
+{
+public void welcomeMphasis()
+{
+	System.out.println("welcome to Rest WebServices Mphasis Batch215");
+}
+public int mul(int a,int b)
+{
+	return a*b;
+}
+
+public int div(int a,int b)
+{
+	return a / b;
+}
+
+}
+---------------------------------------------------------------------------------------------------
+Test3.java
+----------------------
+package com.example.demo;
+
+import org.springframework.stereotype.Component;
+
+@Component("test2")
+public class Test3 
+{
+public int square(int i)
+{
+	return i*i;
+}
+}
+----------------------------------------------------------------------
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+import java.util.*;
+@SpringBootApplication
+public class SpringBootBatch215ex1Application {
+	//ctrl+shift+O
+	public static void main(String[] args)
+	{
+		ApplicationContext ac=SpringApplication.run(SpringBootBatch215ex1Application.class, args);
+		Test1 obj=ac.getBean("test",Test1.class);
+		obj.welcome();
+		System.out.println("the sum is "+obj.sum(5, 6));
+		System.out.println("the sub is "+obj.sub(7,3));
+		
+		Test2 obj1=ac.getBean("test1",Test2.class);
+		obj1.welcomeMphasis();
+		System.out.println("the mul is "+obj1.mul(6, 7));
+		System.out.println("the div is "+obj1.div(14,7));
+		
+		Scanner ob=new Scanner(System.in);
+		System.out.println("Enter a no");
+		int i=ob.nextInt();
+		Test3 ob3=ac.getBean("test2",Test3.class);
+		System.out.println("the square is :"+ob3.square(i));	
+		}
+
+}
+-------------------------------------------------------------------------
+ApplicationContext is a container to create a object for the class.
+It has a method class getBean() which will accept the class name and object name as parameter.
+This is assigned to another object .with this object we can access the methods of the class.
+
+
+example:- @Component("test") :- test is a object of the class Test1.
+So it will create object for the class Test1.
+-------------------------------------------------------------------------------------------
