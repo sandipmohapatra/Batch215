@@ -176,6 +176,131 @@ create 2 methods input() and display();
 accno,name,balance,address
 Take input from the user.
 ----------------------------------------------------------------------
+create a new springStaterProject
+
+create a application Student
+create 2 methods input() and display();
+rollno,name,address,marks (phy,chem,bio),find total and average.
+if avg > 75 "First"
+if avg > 65 "Second"
+if avg > 55 "Third"
+else
+"fail"
+Take input from the user.
+----------------------------------SpringMVC----------------------------------------
+
+
+@GetMapping("/login")------------http://localhost:8090/login
+it will display the login page
+---------------------------------------------------------------------------------------------
+@GetMapping("/Register")------------http://localhost:8090/Register
+it will display the Register page
+------------------------------------Example-1------------------------------------------------------------
+step 1:- file ---new ---spring stater project.
+step-2:- goto webapp--->
+step-3:-create a folder ----WEB-INF
+step-4:-inside that create a folder---view
+step-5:-inside that create login.jsp and register.jsp files. 
+--------------------------------
+Register.jsp
+-----------------
+<html>
+<title>Employee Registration Page</title>
+</head>
+<body>
+<h1><center>Employee Registration Page</center></h1><hr>
+<form action=second>
+<table>
+<tr><td>Enter your name<td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter your address<td><input type=address name=t2 size=20></td></tr>
+<tr><td>Enter your phoneno<td><input type=text name=t3 size=20></td></tr>
+<tr><td>Enter your email<td><input type=address name=t4 size=20></td></tr>
+<tr><td>Enter your salary<td><input type=text name=t5 size=20></td></tr>
+<tr><td>Enter your designation<td><input type=address name=t6 size=20></td></tr>
+<tr><td><td><input type=submit value=submit></td></tr>
+</table>
+</form>
+</body>
+</html>
+---------------------------------
+login.jsp
+------------------
+<!DOCTYPE html>
+<html>
+<title>Employee Login Page</title>
+<body>
+<h1><center>Employee Login Page</center></h1><hr>
+<form action=login>
+<table>
+<tr><td>Enter username<td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter password<td><input type=password name=t2 size=20></td></tr>
+<tr><td><td><input type=submit value=submit></td></tr>
+</table>
+</form>
+</body>
+</html>
+--------------------------------------------------------------------------------------------
+TestController.java
+----------------------
+package com.example.demo;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class TestController
+{
+
+	@GetMapping("/show")
+	public String showLogin()
+	{
+		return "login";
+	}
+	
+	@GetMapping("/show1")
+	public String showRegister()
+	{
+		return "register";
+	}
+}
+-----------------------------------------------------------------------
+properties files
+-----------------------
+server.port=8090
+
+spring.mvc.view.prefix=/WEB-INF/views/
+spring.mvc.view.suffix=.jsp
+---------------------------------------------------------pom.xml-------------------
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+--------------------------------------------------------------------------------------------------------
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootMvCexample1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootMvCexample1Application.class, args);
+	}
+
+}
+------------------------------------------------------------
+
+
+
+
+
 
 
 
