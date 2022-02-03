@@ -448,5 +448,30 @@ success.jsp
 </body>
 </html>
 -------------------------------------------------------
+JSP:- java server pages
+servlet :- server side programming language.
+
+HTML are static pages to make it dynamic we use php,.net,jsp,servlet to carry the request to the database.
+
+servlet :- the data is transfered using HTTP protocal .
+Here we have 2 parameters 
+HTTPServletRequest  req;(from client it will take the request)
+HTTPServletResponse res;(the server will give the response)
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
