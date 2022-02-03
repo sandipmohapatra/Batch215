@@ -306,7 +306,7 @@ create an application for COVID-19
 3)book an ambulance
 4)Feedback
 using springBootMvc
---------------------------------------------------------------------
+--------------------------------------------------3rd Feb 2022------------------
 Oracle 10XE
 -------------------------------------------
 It is a database .where our data need to be stored.
@@ -318,7 +318,135 @@ example student table having rollno,name,address,email.we can store any number o
 2)insert into student215 values(103,'kamal','MP','kamal@gmail.com')
 3)select * from student215
 
+4)update student215 set address='bangalore' where rollno=102;
 
+5)delete from student215 where rollno=104
 
+6)update student215 set rollno=1002 where name='Manish';
+--------------------------------------------------------------------------
+create a bank table
+
+accno number,name varchar2(30),deposite number(9,2),address varchar2(30),balance number(9,2)
+
+number(9,2)=9999999.99
+
+drop table student215
+------------------------Middleware to Backend-------------------------------------------------------------
+JDBC
+-----------------
+java database connection.
+
+java (byte code)----------------driver-------------------oracle(ascii code)
+
+1)we have to install the driver in properties files
+2)as well as add the jar file to our program.(pom.xml)
+-------------------------------------------------------------------------------------------------------------------------------
+request is given by client---every day we give request to gmail server,facebook server,amazon server.
+reponse is given by server.  
+--------------------------------------------------------------------------------------------------
+pom.xml
+----------------------------
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.oracle.ojdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
+			<version>19.3.0.0</version>
+		</dependency>
+---------------------------------------------------------------------------------------------------------------
+properties
+-----------------
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username=system
+spring.datasource.password=1234
+------------------------------------------------------------------------------------------
+controller
+--------------------
+package com.example.demo;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class TestController
+{
+	@Autowired
+	private JdbcTemplate jt;
+
+	@GetMapping("/log")
+	public String showLogin()
+	{
+		return "login";
+	}
+	
+	@GetMapping("/reg")
+	public String showRegister()
+	{
+		return "register";
+	}
+	
+	@RequestMapping("/save")
+	public String doRegistration(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException
+	{
+		String a=req.getParameter("t1");
+		String b=req.getParameter("t2");
+		String c=req.getParameter("t3");
+		String d=req.getParameter("t4");
+		String e=req.getParameter("t5");
+		String f=req.getParameter("t6");
+		
+		String sql="insert into register215 values(?,?,?,?,?,?)";
+		int count=jt.update(sql,a,b,c,d,e,f);
+		System.out.println("row inserted");
+		return "success";
+		
+	}
+}
+-----------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<title>Employee Registration Page</title>
+<body>
+<h1><center>Employee Registration Page</center></h1><hr>
+<form action="save">
+<table>
+<tr><td>Enter your name<td><input type=text name=t1 size=20></td></tr>
+<tr><td>Enter your address<td><input type=address name=t2 size=20></td></tr>
+<tr><td>Enter your phoneno<td><input type=text name=t3 size=20></td></tr>
+<tr><td>Enter your email<td><input type=address name=t4 size=20></td></tr>
+<tr><td>Enter your salary<td><input type=text name=t5 size=20></td></tr>
+<tr><td>Enter your designation<td><input type=address name=t6 size=20></td></tr>
+<tr><td><td><input type=submit value=submit></td></tr>
+</table>
+</form>
+</body>
+</html>
+-----------------------------oracle ----------------
+create table register215(name varchar2(30),address varchar2(30),phoneno varchar2(15),email varchar2(30),salary number, design varchar2(30));
+
+select * from register215;
+----------------------------------------------------------------
+success.jsp
+------------------
+<!DOCTYPE html>
+<html>
+<title>Employee Registration Successful</title>
+<body>
+<h1><center>Employee Registration Successful</center></h1><hr>
+</body>
+</html>
+-------------------------------------------------------
 
 
