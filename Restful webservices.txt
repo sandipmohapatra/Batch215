@@ -316,6 +316,7 @@ example student table having rollno,name,address,email.we can store any number o
 1)create table student215 (rollno number,name varchar2(30),address varchar2(30),email varchar2(30)) 
 
 2)insert into student215 values(103,'kamal','MP','kamal@gmail.com')
+
 3)select * from student215
 
 4)update student215 set address='bangalore' where rollno=102;
@@ -323,6 +324,23 @@ example student table having rollno,name,address,email.we can store any number o
 5)delete from student215 where rollno=104
 
 6)update student215 set rollno=1002 where name='Manish';
+
+7)desc student215;
+
+8)select * from tab;
+
+9)alter table register215 add gender varchar2(30);
+
+alter table register215 add nation varchar2(30); 
+alter table register215 add hobby varchar2(30);
+
+10)0drop table register215;
+
+11)update register215 set gender='Male' where name in('sandip','manish','Gopal');
+
+update register215 set nation='india' where name in('sandip','manish','Gopal');
+
+update register215 set hobby='football' where name='Gopal';
 --------------------------------------------------------------------------
 create a bank table
 
@@ -457,8 +475,12 @@ servlet :- the data is transfered using HTTP protocal .
 Here we have 2 parameters 
 HTTPServletRequest  req;(from client it will take the request)
 HTTPServletResponse res;(the server will give the response)
-----------------------------------------------------------------------------------
-
+-----------------------------------------assignment-2-----------------------------------------
+create a application for AirLines Reservation
+register
+book ticket
+checkin
+---------------------------------------------------------------------------------------------
 
 
 
