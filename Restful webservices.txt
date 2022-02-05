@@ -544,6 +544,75 @@ pom.xml
 ----------------------------------------------------------------------------
 
 
+spring.jpa.show-sql=true
+spring.jpa.database-platform=org.hibernate.dialect.Oracle10Dialect
+spring.jpa.hibernate.ddl-auto=update
+------------------------------------------------------------------------------------------------
+Angular + spring
+-------------------------------------
+angular application run on localhost:4200(node server)
+springboot application run on localhost:8090/student/registration(tomcat)
+---------------------------------------------------------------------------------------------------------------
+crossOrigin 
+Angular to connect with springboot it will communicate with port no 8090/student/registration
+spring boot to connect with angular it will communicate with port no locallhost:4200
+-----------------------------------------------------------------------------------
+1)main class:- springbootRestCrudMySqlExampleApplication.java
+----------------------------------------------------------------------------------------------
+2)model :- student.java .it is used to create table in the database.
+------------------------------------------------------------------------------------------------------------------------------
+@Entity -it is super class for model.
+@Table :- it will create table in oracle.you can mention the table name otherwise it will create table by the name of the class.example:- @Table("/Student1");
+@ID :- it is the primary key field.
+@GeneratedValue :-we have different type of generatedValue like sequence (serially nos will be generated),auto is used in mysql similar to sequence ,assigned is used to assign the value.
+@column :- to create column as the name of the variable.
+---------------------------------------------------------------------------------------------------------------------------------- 
+logging :- to see the flow of the control.
+error
+info
+debug
+warn
+-------------------------------------------------
+swagger :- localhost:8090/show,localhost:8090/show1
+---------------------------------------------------
+industry best standard:-
+--------------------------------------------------------
+jasmine (Karma)
+------------------------------------------------------------------------------------------------------------------------------
+3)EmployeeRepository
+-------------------------------
+EmployeeRepository extends JpaRepository<Employee,Integer>
+------------------------------------------------------<model class><primary key field return type>---------------------------
+
+----------------------------------------------------------------------------------------------------------------------------
+4)service
+-----------------
+saveStudent(Student s);
+updateStudent(Student s);
+deleteStudent(Integer id);
+List<Student> getAllStudent();
+isStudentExist(Integer id);
+-----------------------------------------------------------------------------------------------
+5)serviceInplementation
+-------------------------------------------
+@Autowired StudentRepository repo;
+
+saveStudent(Student s){repo.save(s)}
+updateStudent(Student s){repo.save(s)}
+deleteStudent(Integer id){repo.deleteById(id)}
+List<Student> getAllStudent(){repo.findAll()}
+isStudentExist(Integer id){repo.existsById(id)}
+---------------------------------------------------------------------------
+four Methods in Restful webservices
+------------------------------------------------------------------------------------------------
+1)@PostMapping("/save") ----it is used to save the data
+2)@GetMapping("/reg")---To retrive the data
+3)@PutMapping("/save")----To modify the data
+4)@DeleteMapping("{id}")----To delete the data
+--------------------------------------------------------------------------------------------------------
+
+
+
 
 
 
