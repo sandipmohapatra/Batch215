@@ -555,11 +555,11 @@ springboot application run on localhost:8090/student/registration(tomcat)
 ---------------------------------------------------------------------------------------------------------------
 crossOrigin 
 Angular to connect with springboot it will communicate with port no 8090/student/registration
-spring boot to connect with angular it will communicate with port no locallhost:4200
+spring boot to connect with angular it will communicate with port no localhost:4200
 -----------------------------------------------------------------------------------
 1)main class:- springbootRestCrudMySqlExampleApplication.java
 ----------------------------------------------------------------------------------------------
-2)model :- student.java .it is used to create table in the database.
+2)model :- student.java .it is used to create table in the database.getter() and settter()
 ------------------------------------------------------------------------------------------------------------------------------
 @Entity -it is super class for model.
 @Table :- it will create table in oracle.you can mention the table name otherwise it will create table by the name of the class.example:- @Table("/Student1");
@@ -605,18 +605,113 @@ isStudentExist(Integer id){repo.existsById(id)}
 ---------------------------------------------------------------------------
 four Methods in Restful webservices
 ------------------------------------------------------------------------------------------------
-1)@PostMapping("/save") ----it is used to save the data
-2)@GetMapping("/reg")---To retrive the data
+1)@PostMapping("/save") ----it is used to save the data intoo the data base.
+2)@GetMapping("/reg")---To retrive the data from the database.
 3)@PutMapping("/save")----To modify the data
-4)@DeleteMapping("{id}")----To delete the data
+4)@DeleteMapping("{id}")----To delete the data from the database.
 --------------------------------------------------------------------------------------------------------
+we are passing the value using angular.the data is modified ,deleted,saved for retrived from the database using angular.
+frontend dev are under process.The backend developer have completed there task no to test there application without the angular we use swagger.It is a graphical user interface.
+-------------------------------------------------------------------------------------------
+all the files are connected in the controller.It has a input and it has a return output.
+--------------------------------------------------------------------------------------------------------------------
+Angular:-
+we have modules 
+1)student-all:-to display all the student details.we can edit and delete a row from it.
+2)student create:- this is used to enter the data and save the data.
+3)student-edit:- It has 2 parts
+i)display data using id where we can modify it.
+ii)save the data.
+--------------------------------------------------------------------------------------
+here we have 2 words:-
+1)Observable :- it a stream of events or data.
+It will return http.get(data).
+--------------------------------------------------------------------------------------
+2)subscribe:- it starts the Observable and display the data.(dynamically)
+-----------------------------------------------------------------------------------
+example:- 
+getMovies():Observable<Movies[]>
+{
+return this.http.get <Movies[]>(this.movies);
+}
+------------------------------------------------------------------------------
+this.movieService.getMovies().subscribe
+((movies:Movies[]))=>this.movies=movies,
+console.log(this.movies);
+error =>{console.error};
+----------------------------------------------------------------
+student.service.ts
+---------------------------------
+StudentService [basePath="http://localhost:8090/rest/student';]
+-------------------------------------
+getAllStudents():-get<student[]>
+deleteOneStudent(id):-delete()
+createStudent(Student student):-post()
+getOneStudent(id):-get()
+updateStudent(id,student) :-put()
+----------------------------------------------------------------
+student-all.component.ts
+------------------------------------------
+constructor(StudentService,Router)
+ngOnInit():- getAllStudent()
+getAllStudent()
+{
+return this.service.getAllStudent().subscribe(data=>{this.students=data;},error=>{console.log(error);});
+}
+---------------------------------------------
+1)getAlllStudents();
+2)deleteStudent(id)
+3)editStudent(id)
+------------------------------------------------------------------------------
+student-create.component.ts
+----------------------------------------
+createStudent()
+{}
+-------------------------------------------------------
+student-edit.component.ts
+--------------------------------------------
+1)getOneStudent(id);
+2)updateStudent();
+-----------------------------------------------------
+app.module.ts
+-------------------
+import {HttpClientModule} from '@angular/common/http';
+----------------------------------------
+router path is given in app-routing.module.ts;
+--------------------------------------------------------------------------
+student-all.component.html
+-----------------------------------------
+deleteStuudent(id)
+editStudent(id)
+--------------------------------------------------
+Controller
+------------------------
+@RestController
+@RequestMapping("/rest/student")
+@CrossOrigin(origins="htttp://localhost:4200") 
+When the data is coming from different server to acces itt we use CrossOrigin
+------------------------------------------------------------------------------------
+@Autowired
+private IStudentService service;
+private StudentUtil util;
 
-
-
-
-
-
-
+---------------------------------Backend is responsible to display the data-----------------------------------------------
+1)@PostMapping("/save")
+service.saveStudent(student);
+2)@GetMapping("/all")
+List<Student> list=service.getAllStudents();
+3)getMapping("one/{id}")
+service.getOneStudent(id);
+4)@DeleteMapping("/remove/{id}")
+if(service.isSttudentExist(id))
+service.deleteStudent(id);
+5)@PutMapping("/modify/{id}")
+service.getOneStudent(id);
+--------------------------------------------------------
+angular:-localhost:8090/student/save
+*The path url will be coming from the frontend and the controller will display the data.
+controller:-localhost:4200/save
+--------------------------------------------------------------------------------------------------------------------
 
 
 
